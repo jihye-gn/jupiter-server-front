@@ -1,0 +1,30 @@
+plugins {
+    id 'java'
+}
+
+group 'org.genesisnest'
+version '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    /** * gRPC */
+    implementation group: 'io.grpc', name: 'grpc-netty-shaded', version: '1.21.0'
+    implementation group: 'io.grpc', name: 'grpc-protobuf', version: '1.21.0'
+    implementation group: 'io.grpc', name: 'grpc-stub', version: '1.21.0'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java-util', version: '3.21.1'
+    implementation group: 'com.google.protobuf', name: 'protobuf-java', version: '3.21.1'
+
+    annotationProcessor 'org.projectlombok:lombok:1.18.24'
+    compileOnly 'org.projectlombok:lombok:1.18.24'
+
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.8.2'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.8.2'
+}
+
+
+test {
+    useJUnitPlatform()
+}
